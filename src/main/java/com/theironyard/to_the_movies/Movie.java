@@ -6,8 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Movie {
     private String title;
-    @JsonProperty
+
+    @JsonProperty("poster_path")
     private String posterPath;
+
+    private static final String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/original";
     private String overview;
     private double popularity;
 
@@ -27,7 +30,7 @@ public class Movie {
     }
 
     public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
+        this.posterPath = IMAGE_BASE_URL + posterPath;
     }
 
     public String getOverview() {

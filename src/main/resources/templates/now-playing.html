@@ -7,5 +7,10 @@
 <body>
 <a href="/home">Back to Home Page</a>
 <h1>Now Playing Page</h1>
+<h3>These movies are playing in theaters:</h3>
+<div th:each="movie : ${movies}">
+    <img width="150px" th:src="${movie.posterPath}"/>
+    <span th:text="${movie.title}"></span>
+</div>
 </body>
 </html>

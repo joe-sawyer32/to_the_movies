@@ -15,4 +15,16 @@ public class ResultsPage {
     public void setResults(List<Movie> results) {
         this.results = results;
     }
+
+    @Override
+    public String toString() {
+        String output = "";
+        for (Movie movie : results) {
+            output += "Title: " + movie.getTitle() + "\n" +
+                    "Poster Path: " + movie.getPosterPath() + "\n" +
+                    "Overview: " + movie.getOverview() + "\n" +
+                    "Popularity: " + movie.getPopularity() + "\n\n";
+        }
+        return output;
+    }
 }
